@@ -1,0 +1,9 @@
+{
+  "ai_search_name": "srch-<your-prefix>-<region>",
+  "sql_db_name": "vectorbenchdb",
+  "sql_server_name": "sql-<your-prefix>-<region>",
+  "cosmos_name": "cosmos-<your-prefix>-<region>",
+  "resource_group": "rg-vector-benchmark-<region>",
+  "pg_name": "pg-<your-prefix>-<region>",
+  "location": "brazilsouth"
+}
