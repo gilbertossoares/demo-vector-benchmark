@@ -126,14 +126,14 @@ Write-Host "  ✓ PostgreSQL: $PG_NAME (pgvector habilitado)" -ForegroundColor G
 # --- 5. Azure SQL Database ---
 Write-Host "`n[5/5] Criando Azure SQL Database..." -ForegroundColor Yellow
 
-# Obter informações do usuário Entra atual (necessário para cumprir política MCAPS Entra-only)
+# Obter informações do usuário Entra atual (necessário para Entra-only authentication)
 $entraUser = az ad signed-in-user show --query "userPrincipalName" -o tsv 2>$null
 $entraUserId = az ad signed-in-user show --query "id" -o tsv 2>$null
 
 if (-not $entraUser -or -not $entraUserId) {
-    Write-Host "  ⚠ Não foi possível obter usuário Entra. SQL Server bloqueado por política MCAPS." -ForegroundColor Yellow
+    Write-Host "  ⚠ Não foi possível obter usuário Entra. SQL Server requer Entra-only authentication." -ForegroundColor Yellow
 } else {
-    # Criar SQL Server com Entra-only auth para cumprir política MCAPS
+    # Criar SQL Server com Entra-only auth
     az sql server create `
         --name $SQL_SERVER_NAME `
         --resource-group $RG `

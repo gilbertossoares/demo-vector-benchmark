@@ -10,8 +10,8 @@
 ## Completion Checklist
 
 ### Documentation ✅
-- [x] **README.md** - Comprehensive project overview with quick start guide
-- [x] **README_EN.md** - Full English version with all details
+- [x] **README.md** - Main documentation in English (default)
+- [x] **README_pt.md** - Portuguese version with full details
 - [x] **ARCHITECTURE.md** - Design decisions, methodology, and technical details
 - [x] **CONTRIBUTING.md** - Guidelines for contributors and new feature additions
 - [x] **RESULTS.md** - Benchmark results format, interpretation guide, and examples
@@ -44,7 +44,7 @@
 ```
 demo-vector-benchmark/
 ├── 📄 README.md                           # Main documentation (English)
-├── 📄 README_EN.md                        # Full English version
+├── 📄 README_pt.md                        # Portuguese version
 ├── 📄 LICENSE                             # MIT License
 ├── 📄 .gitignore                          # Git ignore patterns
 ├── 📄 .env.example                        # Environment template (translated)
@@ -145,8 +145,8 @@ demo-vector-benchmark/
 - [x] LICENSE
 - [x] .gitignore
 - [x] .env.example
-- [x] README.md (original Portuguese)
-- [x] README_EN.md (full English version)
+- [x] README.md (English — default)
+- [x] README_pt.md (Portuguese version)
 - [x] requirements.txt
 - [x] config.json
 - [x] docs/ARCHITECTURE.md
@@ -160,7 +160,7 @@ demo-vector-benchmark/
 - Remove data/ directory (will be git-ignored)
 - Remove results/ directory (will be git-ignored)
 - Remove venv/ directory (will be git-ignored)
-- Remove README.md original (keep README_EN.md as main)
+- README.md is now the English default; README_pt.md is the Portuguese version
 
 ---
 
@@ -179,7 +179,8 @@ rm -rf venv/
 git status  # Should not show credentials, data, or results
 
 # 3. Final review
-cat README_EN.md  # Verify content
+cat README.md     # Verify English content
+cat README_pt.md  # Verify Portuguese content
 cat LICENSE       # Verify MIT license
 ls -la .git       # Verify git initialized
 
